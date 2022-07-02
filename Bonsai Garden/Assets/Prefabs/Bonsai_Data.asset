@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b717704e61e262449087808d47318ce, type: 3}
+  m_Name: Bonsai_Data
+  m_EditorClassIdentifier: 
+  bonsai:
+  - bonsai_name: Juniper
+    seed_sprite: {fileID: 0}
+    sapling_sprite: {fileID: 0}
+    bonsai_sprite: {fileID: 21300000, guid: 934982ee0b40785429c153a912b51523, type: 3}
+    overgrown_sprite: {fileID: 0}
+    bonsai_shop_price: 10
+    money_on_tap: 0
+    seed_timer: 0
+    sapling_timer: 0
+    overgrown_timer: 0
+  - bonsai_name: Ficus
+    seed_sprite: {fileID: 0}
+    sapling_sprite: {fileID: 0}
+    bonsai_sprite: {fileID: 21300000, guid: 9ccea679344b8e649aea7cc9a2ca253b, type: 3}
+    overgrown_sprite: {fileID: 0}
+    bonsai_shop_price: 25
+    money_on_tap: 25
+    seed_timer: 0
+    sapling_timer: 0
+    overgrown_timer: 0
+  - bonsai_name: Metasequia
+    seed_sprite: {fileID: 21300000, guid: 6fed1a244815e6a47a654e9ab674a2c7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 100
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
