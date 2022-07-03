@@ -14,6 +14,7 @@ public class Bonsai_Attributes
 
     public int bonsai_shop_price;
     public int money_on_tap;
+    public int decreased_time_on_tap;
 
     public int seed_timer;
     public int sapling_timer;
