@@ -34,7 +34,7 @@ public class Free_Place_Handler : MonoBehaviour
         Bonsai_Attributes this_bonsai = bonsaiDB.Get_Bonsai(place_bonsai.Get_Active_Bonsai());
         GameObject new_bonsai = Instantiate(bonsai_prefab, Calculate_Spawn_Transform(transform.position), Quaternion.identity);
         tree_sprite = new_bonsai.transform.Find("Bonsai").GetComponent<SpriteRenderer>();
-        tree_sprite.sprite = this_bonsai.bonsai_sprite;
+        tree_sprite.sprite = this_bonsai.seed_sprite;
         money_manager.Decrease_Money(this_bonsai.bonsai_shop_price);
         new_bonsai.GetComponent<Placed_Bonsai_Handler>().Set_Bonsai_Index(place_bonsai.Get_Active_Bonsai());
     }
