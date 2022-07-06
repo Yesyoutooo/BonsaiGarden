@@ -21,6 +21,7 @@ MonoBehaviour:
     bonsai_shop_price: 10
     money_on_tap: 0
     decreased_time_on_tap: 0
+    taps_to_remove_overgrow: 0
     seed_timer: 0
     sapling_timer: 0
     overgrown_timer: 0
@@ -32,6 +33,7 @@ MonoBehaviour:
     bonsai_shop_price: 25
     money_on_tap: 25
     decreased_time_on_tap: 2
+    taps_to_remove_overgrow: 0
     seed_timer: 1
     sapling_timer: 1
     overgrown_timer: 2
@@ -43,6 +45,7 @@ MonoBehaviour:
     bonsai_shop_price: 100
     money_on_tap: 100
     decreased_time_on_tap: 2
+    taps_to_remove_overgrow: 10
     seed_timer: 1
     sapling_timer: 1
     overgrown_timer: 1
