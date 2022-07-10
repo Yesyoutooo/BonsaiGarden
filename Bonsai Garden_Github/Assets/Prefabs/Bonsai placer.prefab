@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8824563832800970833}
   - component: {fileID: 8824563832800970834}
   m_Layer: 0
-  m_Name: Bonsai place
+  m_Name: Bonsai placer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,4 +48,5 @@ MonoBehaviour:
   bonsaiDB: {fileID: 11400000, guid: ae2f330e795ad4540b96841a019c3163, type: 2}
   bonsai_prefab: {fileID: 7247244805099146343, guid: 3184f3ed1523d644da5d5409633ee3eb, type: 3}
   disable_free_places_button: {fileID: 0}
+  bonsai_inventory_UI: {fileID: 0}
   placeable: []

@@ -19,4 +19,6 @@ public class Bonsai_Attributes
     public int seed_timer;
     public int sapling_timer;
     public int overgrown_timer;
+
+    public int taps_to_remove_overgrow;
 }

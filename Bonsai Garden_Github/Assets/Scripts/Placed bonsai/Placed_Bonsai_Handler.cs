@@ -14,8 +14,7 @@ public class Placed_Bonsai_Handler : MonoBehaviour
 
     //Sprite and timer variables
     private SpriteRenderer this_renderer;
-    //
-    public float current_timer_time = 0;
+    private float current_timer_time = 0;
     private string current_state;
     private bool seed_timer_started = false;
 
@@ -25,17 +24,20 @@ public class Placed_Bonsai_Handler : MonoBehaviour
     [SerializeField] private GameObject select_pot_style;
     [SerializeField] private GameObject relocate_bonsai;
 
+    [SerializeField] private Booster_manager booster_manager;
 
     private Money_manager money_manager;
     private int bonsai_index;
-    //
-    public int taps_to_remove_overgrow;
-    private float time_to_open_menus = 1.5f;
+    private int taps_to_remove_overgrow;
+    private float time_to_open_menus = 1;
+    private float time_to_generate_currency_not_overgrown = 3;
+    private float time_to_generate_currency_overgrown = 10;
 
     private void Start()
     {
         this_bonsai = bonsaiDB.Get_Bonsai(bonsai_index);
         money_manager = FindObjectOfType<Money_manager>();
+        booster_manager = FindObjectOfType<Booster_manager>();
         this_renderer = transform.Find("Bonsai").GetComponent<SpriteRenderer>();
         taps_to_remove_overgrow = this_bonsai.taps_to_remove_overgrow;
         Hide_Bonsai_Menu();
@@ -44,37 +46,40 @@ public class Placed_Bonsai_Handler : MonoBehaviour
     private void Update()
     {
         Handle_Timers();
-        if (Input.GetMouseButton(0))
-        {
-            time_to_open_menus -= Time.deltaTime;
-            if (time_to_open_menus <= 0)
-            {
-                Open_Bonsai_Menu();
-            }
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            time_to_open_menus = 1.5f;
-        }
+        Handle_Menus();
+        Autogenerate_Money();
     }
 
     //Behavior on tapping bonsai
     private void OnMouseUpAsButton()
     {
-        if (current_state == "overgrown")
+        switch (current_state)
         {
-            Overgrown_Bonsai_Tapped();
-        }
-        else if (current_state == "tree")
-        {
-            money_manager.Increase_Money(this_bonsai.money_on_tap);
-            money_manager.Update_Displayed_Amount();
-        }
-        else
-        {
-            money_manager.Increase_Money(this_bonsai.money_on_tap);
-            money_manager.Update_Displayed_Amount();
-            Decrease_Timer(this_bonsai.decreased_time_on_tap);
+            case "overgrown":
+                Overgrown_Bonsai_Tapped();
+                break;
+            case "tree":
+                if (booster_manager.Get_Extra_Money_Booster_Activity_State()==false)
+                {
+                    money_manager.Increase_Money(this_bonsai.money_on_tap);
+                }
+                else
+                {
+                    money_manager.Increase_Money(this_bonsai.money_on_tap * booster_manager.Get_Extra_Money_Booster_Multiplier());
+                }
+                break;
+            default:
+                if (booster_manager.Get_Extra_Money_Booster_Activity_State() == false)
+                {
+                    money_manager.Increase_Money(this_bonsai.money_on_tap);
+                    Decrease_Timer(this_bonsai.decreased_time_on_tap);
+                }
+                else
+                {
+                    money_manager.Increase_Money(this_bonsai.money_on_tap * booster_manager.Get_Extra_Money_Booster_Multiplier());
+                    Decrease_Timer(this_bonsai.decreased_time_on_tap);
+                }
+                break;
         }
     }
 
@@ -153,6 +158,7 @@ public class Placed_Bonsai_Handler : MonoBehaviour
         {
             this_renderer.sprite = this_bonsai.overgrown_sprite;
             current_state = "overgrown";
+            timer_text.gameObject.SetActive(false);
         }
     }
 
@@ -163,6 +169,25 @@ public class Placed_Bonsai_Handler : MonoBehaviour
     //===========================================================================
     //===========================================================================
 
+    private void Handle_Menus()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            time_to_open_menus -= Time.deltaTime;
+            if (time_to_open_menus <= 0 && current_state != "overgrown")
+            {
+                Open_Bonsai_Menu_Not_Overgrown();
+            }
+            if (time_to_open_menus <= 0 && current_state == "overgrown")
+            {
+                Open_Bonsai_Menu_Overgrown();
+            }
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            time_to_open_menus = 1;
+        }
+    }
     private void Hide_Bonsai_Menu()
     {
         timer_text.gameObject.SetActive(false);
@@ -171,9 +196,15 @@ public class Placed_Bonsai_Handler : MonoBehaviour
         relocate_bonsai.SetActive(false);
     }
 
-    private void Open_Bonsai_Menu()
+    private void Open_Bonsai_Menu_Not_Overgrown()
     {
         timer_text.gameObject.SetActive(true);
+        select_bonsai_style.SetActive(true);
+        select_pot_style.SetActive(true);
+        relocate_bonsai.SetActive(true);
+    }
+    private void Open_Bonsai_Menu_Overgrown()
+    {
         select_bonsai_style.SetActive(true);
         select_pot_style.SetActive(true);
         relocate_bonsai.SetActive(true);
@@ -184,8 +215,14 @@ public class Placed_Bonsai_Handler : MonoBehaviour
     private void Overgrown_Bonsai_Tapped()
     {
         taps_to_remove_overgrow--;
-        money_manager.Increase_Money(this_bonsai.money_on_tap * 2);
-        money_manager.Update_Displayed_Amount();
+        if (booster_manager.Get_Extra_Money_Booster_Activity_State() == false)
+        {
+            money_manager.Increase_Money(this_bonsai.money_on_tap*2);
+        }
+        else
+        {
+            money_manager.Increase_Money(this_bonsai.money_on_tap * booster_manager.Get_Extra_Money_Booster_Multiplier()*2);
+        }
 
         if (taps_to_remove_overgrow <= 0)
         {
@@ -193,6 +230,28 @@ public class Placed_Bonsai_Handler : MonoBehaviour
             current_timer_time = this_bonsai.overgrown_timer * 60;
             current_state = "tree";
             taps_to_remove_overgrow = this_bonsai.taps_to_remove_overgrow;
+        }
+    }
+
+    private void Autogenerate_Money()
+    {
+        if (current_state != "overgrown")
+        {
+            time_to_generate_currency_not_overgrown -= Time.deltaTime;
+            if (time_to_generate_currency_not_overgrown <= 0)
+            {
+                money_manager.Increase_Money(this_bonsai.money_on_tap);
+                time_to_generate_currency_not_overgrown = 3;
+            }
+        }
+        else
+        {
+            time_to_generate_currency_overgrown -= Time.deltaTime;
+            if (time_to_generate_currency_overgrown <= 0)
+            {
+                money_manager.Increase_Money(this_bonsai.money_on_tap);
+                time_to_generate_currency_overgrown = 10;
+            }
         }
     }
 }

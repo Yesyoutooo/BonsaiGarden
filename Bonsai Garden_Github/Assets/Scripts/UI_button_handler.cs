@@ -9,16 +9,36 @@ public class UI_button_handler : MonoBehaviour
     [SerializeField] private GameObject pause_menu_resume_button;
     [SerializeField] private GameObject pause_menu_quit_button;
 
-    [SerializeField] private GameObject bonsai_inventory_button;
-    [SerializeField] private GameObject bonsai_inventory_grid;
-    [SerializeField] private GameObject bonsai_inventory_close_button_1;
-    [SerializeField] private GameObject bonsai_inventory_close_button_2;
-    [SerializeField] private GameObject bonsai_inventory_open_decoration_button;
+    [SerializeField] private GameObject bonsai_shop_button;
 
-    [SerializeField] private GameObject decoration_inventory_grid;
-    [SerializeField] private GameObject decoration_inventory_close_button_1;
-    [SerializeField] private GameObject decoration_inventory_close_button_2;
-    [SerializeField] private GameObject decoration_inventory_open_bonsai_button;
+    [SerializeField] private GameObject bonsai_shop_grid;
+    [SerializeField] private GameObject bonsai_shop_close_button_1;
+    [SerializeField] private GameObject bonsai_shop_close_button_2;
+    [SerializeField] private GameObject bonsai_shop_open_decoration_button;
+    [SerializeField] private GameObject bonsai_shop_open_booster_button;
+    [SerializeField] private GameObject bonsai_shop_open_MTX_button;
+
+    [SerializeField] private GameObject decoration_shop_grid;
+    [SerializeField] private GameObject decoration_shop_close_button_1;
+    [SerializeField] private GameObject decoration_shop_close_button_2;
+    [SerializeField] private GameObject decoration_shop_open_bonsai_button;
+    [SerializeField] private GameObject decoration_shop_open_booster_button;
+    [SerializeField] private GameObject decoration_shop_open_MTX_button;
+
+    [SerializeField] private GameObject booster_shop_grid;
+    [SerializeField] private GameObject booster_shop_close_button_1;
+    [SerializeField] private GameObject booster_shop_close_button_2;
+    [SerializeField] private GameObject booster_shop_open_bonsai_button;
+    [SerializeField] private GameObject booster_shop_open_decoration_button;
+    [SerializeField] private GameObject booster_shop_open_MTX_button;
+
+    [SerializeField] private GameObject MTX_shop_grid;
+    [SerializeField] private GameObject MTX_shop_close_button_1;
+    [SerializeField] private GameObject MTX_shop_close_button_2;
+    [SerializeField] private GameObject MTX_shop_open_bonsai_button;
+    [SerializeField] private GameObject MTX_shop_open_decoration_button;
+    [SerializeField] private GameObject MTX_shop_open_booster_button;
+
 
     [SerializeField] private GameObject disable_free_places_button;
     [SerializeField] private Place_Bonsai place_Bonsai;
@@ -26,13 +46,13 @@ public class UI_button_handler : MonoBehaviour
     private void Enable_Menu_Buttons()
     {
         pause_button.SetActive(true);
-        bonsai_inventory_button.SetActive(true);
+        bonsai_shop_button.SetActive(true);
     }
 
     private void Disable_Menu_Buttons()
     {
         pause_button.SetActive(false);
-        bonsai_inventory_button.SetActive(false);
+        bonsai_shop_button.SetActive(false);
     }
 
     public void Pause_Button_Clicked()
@@ -52,37 +72,41 @@ public class UI_button_handler : MonoBehaviour
         Application.Quit();
     }
 
-    public void Bonsai_Inventory_Button_Clicked()
+    public void Open_Bonsai_Shop()
     {
-        bonsai_inventory_grid.SetActive(true);
+        bonsai_shop_grid.SetActive(true);
+        decoration_shop_grid.SetActive(false);
+        booster_shop_grid.SetActive(false);
+        MTX_shop_grid.SetActive(false);
+    }
+    public void Open_Decoration_Shop()
+    {
+        bonsai_shop_grid.SetActive(false);
+        decoration_shop_grid.SetActive(true);
+        booster_shop_grid.SetActive(false);
+        MTX_shop_grid.SetActive(false);
+    }
+    public void Open_Booster_Shop()
+    {
+        bonsai_shop_grid.SetActive(false);
+        decoration_shop_grid.SetActive(false);
+        booster_shop_grid.SetActive(true);
+        MTX_shop_grid.SetActive(false);
+    }
+    public void Open_MTX_Shop()
+    {
+        bonsai_shop_grid.SetActive(false);
+        decoration_shop_grid.SetActive(false);
+        booster_shop_grid.SetActive(false);
+        MTX_shop_grid.SetActive(true);
     }
 
-    public void Bonsai_Inventory_Open_Decoration_Button_Clicked()
+    public void Close_Shop()
     {
-        bonsai_inventory_grid.SetActive(false);
-        decoration_inventory_grid.SetActive(true);
-    }
-
-    public void Bonsai_Inventory_Close_Button_Clicked()
-    {
-        bonsai_inventory_grid.SetActive(false);
-    }
-
-    public void Decoration_Inventory_Button_Clicked()
-    {
-        bonsai_inventory_button.SetActive(false);
-        decoration_inventory_grid.SetActive(true);
-    }
-
-    public void Decoration_Inventory_Open_Bonsai_Button_Clicked()
-    {
-        bonsai_inventory_grid.SetActive(true);
-        decoration_inventory_grid.SetActive(false);
-    }
-
-    public void Decoration_Inventory_Close_Button_Clicked()
-    {
-        decoration_inventory_grid.SetActive(false);
+        bonsai_shop_grid.SetActive(false);
+        decoration_shop_grid.SetActive(false);
+        booster_shop_grid.SetActive(false);
+        MTX_shop_grid.SetActive(false);
     }
 
     public void Disable_Free_Places_Button_Clicked()
