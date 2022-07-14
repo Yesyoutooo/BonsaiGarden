@@ -43,6 +43,10 @@ public class UI_button_handler : MonoBehaviour
     [SerializeField] private GameObject disable_free_places_button;
     [SerializeField] private Place_Bonsai place_Bonsai;
 
+    [SerializeField] private GameObject pot_shop_grid;
+    [SerializeField] private GameObject pot_confirm_button;
+    [SerializeField] private GameObject pot_cancel_button;
+
     private void Enable_Menu_Buttons()
     {
         pause_button.SetActive(true);
@@ -113,5 +117,29 @@ public class UI_button_handler : MonoBehaviour
     {
         disable_free_places_button.SetActive(false);
         place_Bonsai.Disable_Free_Places();
+    }
+
+    public void Enable_Pot_Buttons()
+    {
+        pot_confirm_button.SetActive(true);
+        pot_cancel_button.SetActive(true);
+    }
+
+    public void Disable_Pot_Buttons()
+    {
+        pot_confirm_button.SetActive(false);
+        pot_cancel_button.SetActive(false);
+    }
+
+    public void Open_Pot_Shop()
+    {
+        pot_shop_grid.SetActive(true);
+        Disable_Menu_Buttons();
+    }
+
+    public void Close_Pot_Shop()
+    {
+        pot_shop_grid.SetActive(false);
+        Enable_Menu_Buttons();
     }
 }

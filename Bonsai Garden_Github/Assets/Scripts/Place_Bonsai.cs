@@ -24,7 +24,7 @@ public class Place_Bonsai : MonoBehaviour
             placeable = FindInActiveObjectsByTag("Free_Place");
 
         }
-        if (this_bonsai.bonsai_shop_price <= money_manager.Get_Money())
+        if (this_bonsai.bonsai_shop_price <= money_manager.Get_Money() && placeable.Length > 0)
         {
             foreach (var place in placeable)
             {
@@ -44,8 +44,8 @@ public class Place_Bonsai : MonoBehaviour
         foreach (var place in placeable)
         {
             place.SetActive(false);
-            disable_free_places_button.gameObject.SetActive(false);
         }
+        disable_free_places_button.gameObject.SetActive(false);
     }
 
     //Empties the placeabl array to avoid null references

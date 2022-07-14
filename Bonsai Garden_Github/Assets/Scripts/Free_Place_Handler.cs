@@ -6,25 +6,34 @@ public class Free_Place_Handler : MonoBehaviour
 {
     [SerializeField] private Bonsai_Data bonsaiDB;
     [SerializeField] private GameObject bonsai_prefab;
-    [SerializeField] private Place_Bonsai place_bonsai;
-    [SerializeField] private Money_manager money_manager;
     [SerializeField] private GameObject bonsai_inventory_UI;
+    private Money_manager money_manager;
     private SpriteRenderer tree_sprite;
+    private Place_Bonsai place_bonsai;
     private Vector3 spawn_transform;
+
+    private void Start()
+    {
+        place_bonsai = FindObjectOfType<Place_Bonsai>();
+        money_manager = FindObjectOfType<Money_manager>();
+    }
 
     //On clicking the free place, this handles everything
     private void OnMouseUpAsButton()
     {
-        Bonsai_Attributes this_bonsai = bonsaiDB.Get_Bonsai(place_bonsai.Get_Active_Bonsai());
-
-        if (this_bonsai.bonsai_shop_price <= money_manager.Get_Money())
+        if (place_bonsai.Get_Active_Bonsai() != 200211)
         {
-            Spawn_Bonsai();
-            Destroy(gameObject);
-            place_bonsai.Disable_Free_Places();
-            place_bonsai.Clear_Placeable();
-            money_manager.Update_Displayed_Amount();
-            bonsai_inventory_UI.SetActive(true);
+            Bonsai_Attributes this_bonsai = bonsaiDB.Get_Bonsai(place_bonsai.Get_Active_Bonsai());
+
+            if (this_bonsai.bonsai_shop_price <= money_manager.Get_Money())
+            {
+                Spawn_Bonsai();
+                Destroy(gameObject);
+                place_bonsai.Disable_Free_Places();
+                place_bonsai.Clear_Placeable();
+                money_manager.Update_Displayed_Amount();
+                bonsai_inventory_UI.SetActive(true);
+            }
         }
     }
 
@@ -57,8 +66,6 @@ public class Free_Place_Handler : MonoBehaviour
         }
         return spawn_transform;
     }
-
-
 }
 
 
