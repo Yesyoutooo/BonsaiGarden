@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonsai:
   - bonsai_name: Juniper
+    bonsai_index: 0
     seed_sprite: {fileID: 21300000, guid: f7078e1b0cb862b498555d0a579ad845, type: 3}
     sapling_sprite: {fileID: 21300000, guid: 17c53a1529d274448a8dbdeb56383215, type: 3}
     bonsai_sprite: {fileID: 21300000, guid: c1c4b454ce5627d48ba0fcf6c0913aad, type: 3}
@@ -24,8 +25,12 @@ MonoBehaviour:
     seed_timer: 1
     sapling_timer: 1
     overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
     taps_to_remove_overgrow: 5
+    xp_on_tap: 10
   - bonsai_name: Ficus
+    bonsai_index: 1
     seed_sprite: {fileID: 21300000, guid: 28a01cf80de04b24bb6ae1e073a7b3e3, type: 3}
     sapling_sprite: {fileID: 21300000, guid: bbc35c9a71457d54faf75852e7aea886, type: 3}
     bonsai_sprite: {fileID: 21300000, guid: ee36ff725658921438ea920e2ca10aa6, type: 3}
@@ -36,9 +41,13 @@ MonoBehaviour:
     seed_timer: 1
     sapling_timer: 1
     overgrown_timer: 2
+    style_timer: 1
+    style_overgrown_timer: 1
     taps_to_remove_overgrow: 11
+    xp_on_tap: 12
   - bonsai_name: Metasequia
-    seed_sprite: {fileID: 21300000, guid: 6fed1a244815e6a47a654e9ab674a2c7, type: 3}
+    bonsai_index: 2
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
     sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
     bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
     overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
@@ -48,4 +57,7 @@ MonoBehaviour:
     seed_timer: 1
     sapling_timer: 1
     overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
     taps_to_remove_overgrow: 30
+    xp_on_tap: 15

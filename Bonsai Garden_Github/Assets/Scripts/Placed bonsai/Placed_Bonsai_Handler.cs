@@ -29,9 +29,11 @@ public class Placed_Bonsai_Handler : MonoBehaviour
 
     private Booster_manager booster_manager;
     private Money_manager money_manager;
+    private Level_Manager level_manager;
 
     private int bonsai_index;
     private int taps_to_remove_overgrow;
+    private int xp_on_tap;
 
     //Time.deltaTime variables
     private float time_to_open_menus = 0.7f;
@@ -46,11 +48,13 @@ public class Placed_Bonsai_Handler : MonoBehaviour
 
         money_manager = FindObjectOfType<Money_manager>();
         booster_manager = FindObjectOfType<Booster_manager>();
-        this_renderer = transform.Find("Bonsai").GetComponent<SpriteRenderer>();
+        level_manager = FindObjectOfType<Level_Manager>();
 
+        this_renderer = transform.Find("Bonsai").GetComponent<SpriteRenderer>();
         this_collider = GetComponent<BoxCollider2D>();
 
         taps_to_remove_overgrow = this_bonsai.taps_to_remove_overgrow;
+        xp_on_tap = this_bonsai.xp_on_tap;
 
         time_to_generate_currency_not_overgrown_timer = time_to_generate_currency_not_overgrown;
         time_to_generate_currency_overgrown_timer = time_to_generate_currency_overgrown;
@@ -80,10 +84,12 @@ public class Placed_Bonsai_Handler : MonoBehaviour
                 if (booster_manager.Get_Extra_Money_Booster_Activity_State() == false)
                 {
                     money_manager.Increase_Money(this_bonsai.money_on_tap);
+                    level_manager.Increase_Current_XP(xp_on_tap);
                 }
                 else
                 {
                     money_manager.Increase_Money(this_bonsai.money_on_tap * booster_manager.Get_Extra_Money_Booster_Multiplier());
+                    level_manager.Increase_Current_XP(xp_on_tap);
                 }
                 break;
         }
@@ -293,6 +299,7 @@ public class Placed_Bonsai_Handler : MonoBehaviour
             {
                 money_manager.Increase_Money(this_bonsai.money_on_tap);
                 time_to_generate_currency_not_overgrown_timer = time_to_generate_currency_not_overgrown;
+                level_manager.Increase_Current_XP(xp_on_tap);
             }
         }
         else
@@ -302,6 +309,7 @@ public class Placed_Bonsai_Handler : MonoBehaviour
             {
                 money_manager.Increase_Money(this_bonsai.money_on_tap);
                 time_to_generate_currency_overgrown_timer = time_to_generate_currency_overgrown;
+                level_manager.Increase_Current_XP(xp_on_tap);
             }
         }
     }
@@ -314,5 +322,10 @@ public class Placed_Bonsai_Handler : MonoBehaviour
     public string Get_Current_State()
     {
         return current_state;
+    }
+
+    public int Get_Index()
+    {
+        return this_bonsai.bonsai_index;
     }
 }
