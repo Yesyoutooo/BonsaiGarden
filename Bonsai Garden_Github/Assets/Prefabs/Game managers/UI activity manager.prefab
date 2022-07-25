@@ -75,3 +75,7 @@ MonoBehaviour:
   MTX_shop_open_booster_button: {fileID: 0}
   disable_free_places_button: {fileID: 0}
   place_Bonsai: {fileID: 0}
+  pot_shop_grid: {fileID: 0}
+  pot_confirm_button: {fileID: 0}
+  pot_cancel_button: {fileID: 0}
+  level_up_reward_panel: {fileID: 0}

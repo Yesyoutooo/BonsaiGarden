@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class Style_Manager : MonoBehaviour
 {
-    [SerializeField] Style_Data Style_0;
-    [SerializeField] Style_Data Style_1;
-    [SerializeField] Style_Data Style_2;
+    [SerializeField] Style_Data styleDB_0;
+    [SerializeField] Style_Data styleDB_1;
+    [SerializeField] Style_Data styleDB_2;
 
-    [SerializeField] GameObject Style_Shop_0;
-    [SerializeField] GameObject Style_Shop_1;
-    [SerializeField] GameObject Style_Shop_2;
+    [SerializeField] GameObject style_shop_0;
+    [SerializeField] GameObject style_shop_1;
+    [SerializeField] GameObject style_shop_2;
 
-    string scriptable_name;
+    private string scriptable_name;
+    private Style_Data this_styleDB;
+    private SpriteRenderer active_spriterenderer;
 
     public void Open_Style_Shop()
     {
         switch (scriptable_name)
         {
             case "Style_0":
-                Style_Shop_0.gameObject.SetActive(true);
+                style_shop_0.gameObject.SetActive(true);
+                this_styleDB = styleDB_0;
                 break;
             case "Style_1":
-                Style_Shop_1.gameObject.SetActive(true);
+                style_shop_1.gameObject.SetActive(true);
+                this_styleDB = styleDB_1;
                 break;
             case "Style_2":
-                Style_Shop_2.gameObject.SetActive(true);
+                style_shop_2.gameObject.SetActive(true);
+                this_styleDB = styleDB_2;
                 break;
             default:
                 break;
@@ -35,5 +40,15 @@ public class Style_Manager : MonoBehaviour
     public void Set_Scriptable_Name(string set_name)
     {
         scriptable_name = set_name;
+    }
+
+    public void Set_Active_Spriterenderer(SpriteRenderer spriterenderer)
+    {
+        active_spriterenderer = spriterenderer;
+    }
+
+    public void Style_Button_Clicked(int style_index)
+    {
+        active_spriterenderer.sprite = this_styleDB.Get_Style(style_index).style_sprite;
     }
 }

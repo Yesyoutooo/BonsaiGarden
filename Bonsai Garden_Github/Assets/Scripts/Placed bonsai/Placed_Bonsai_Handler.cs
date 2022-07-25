@@ -165,6 +165,7 @@ public class Placed_Bonsai_Handler : MonoBehaviour
         {
             current_timer_time = this_bonsai.seed_timer * 60;
             seed_timer_started = true;
+            current_state = "seed";
         }
         current_timer_time -= Time.deltaTime;
         TimeSpan time_for_display = TimeSpan.FromSeconds(current_timer_time);
@@ -295,9 +296,15 @@ public class Placed_Bonsai_Handler : MonoBehaviour
         if (current_state != "overgrown")
         {
             time_to_generate_currency_not_overgrown_timer -= Time.deltaTime;
-            if (time_to_generate_currency_not_overgrown_timer <= 0)
+            if (time_to_generate_currency_not_overgrown_timer <= 0 && booster_manager.Get_Extra_Money_Booster_Activity_State() == false)
             {
                 money_manager.Increase_Money(this_bonsai.money_on_tap);
+                time_to_generate_currency_not_overgrown_timer = time_to_generate_currency_not_overgrown;
+                level_manager.Increase_Current_XP(xp_on_tap);
+            }
+            else if (time_to_generate_currency_not_overgrown_timer <= 0 && booster_manager.Get_Extra_Money_Booster_Activity_State() == true)
+            {
+                money_manager.Increase_Money(this_bonsai.money_on_tap * booster_manager.Get_Extra_Money_Booster_Multiplier());
                 time_to_generate_currency_not_overgrown_timer = time_to_generate_currency_not_overgrown;
                 level_manager.Increase_Current_XP(xp_on_tap);
             }
@@ -305,9 +312,15 @@ public class Placed_Bonsai_Handler : MonoBehaviour
         else
         {
             time_to_generate_currency_overgrown_timer -= Time.deltaTime;
-            if (time_to_generate_currency_overgrown_timer <= 0)
+            if (time_to_generate_currency_overgrown_timer <= 0 && booster_manager.Get_Extra_Money_Booster_Activity_State() == false)
             {
-                money_manager.Increase_Money(this_bonsai.money_on_tap);
+                money_manager.Increase_Money(this_bonsai.money_on_tap * 2);
+                time_to_generate_currency_overgrown_timer = time_to_generate_currency_overgrown;
+                level_manager.Increase_Current_XP(xp_on_tap);
+            }
+            else if (time_to_generate_currency_overgrown_timer <= 0 && booster_manager.Get_Extra_Money_Booster_Activity_State() == true)
+            {
+                money_manager.Increase_Money(this_bonsai.money_on_tap * booster_manager.Get_Extra_Money_Booster_Multiplier() * 2);
                 time_to_generate_currency_overgrown_timer = time_to_generate_currency_overgrown;
                 level_manager.Increase_Current_XP(xp_on_tap);
             }

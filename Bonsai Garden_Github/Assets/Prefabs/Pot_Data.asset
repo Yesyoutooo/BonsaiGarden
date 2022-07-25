@@ -15,7 +15,7 @@ MonoBehaviour:
   pot:
   - name: Pot1-Ceramic
     pot_price: 10
-    pot_sprite: {fileID: 21300000, guid: 3e29328b4b378a64fa19c907bdfd2efc, type: 3}
+    pot_sprite: {fileID: 21300000, guid: bea04aca97fcac7419e1e2330d4c8304, type: 3}
   - name: Pot1-Clay
     pot_price: 20
     pot_sprite: {fileID: 21300000, guid: 467529f51e6687b4e9ab6e46286eb2a1, type: 3}

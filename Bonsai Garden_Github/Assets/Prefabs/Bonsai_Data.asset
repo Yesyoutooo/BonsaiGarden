@@ -33,7 +33,7 @@ MonoBehaviour:
     bonsai_index: 1
     seed_sprite: {fileID: 21300000, guid: 28a01cf80de04b24bb6ae1e073a7b3e3, type: 3}
     sapling_sprite: {fileID: 21300000, guid: bbc35c9a71457d54faf75852e7aea886, type: 3}
-    bonsai_sprite: {fileID: 21300000, guid: ee36ff725658921438ea920e2ca10aa6, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: b5498be60209a8f4881a3bd9ad3b77f2, type: 3}
     overgrown_sprite: {fileID: 21300000, guid: 50b47fdbe8ad7c84f9453dc147f5a403, type: 3}
     bonsai_shop_price: 25
     money_on_tap: 10
@@ -45,8 +45,280 @@ MonoBehaviour:
     style_overgrown_timer: 1
     taps_to_remove_overgrow: 11
     xp_on_tap: 12
-  - bonsai_name: Metasequia
+  - bonsai_name: Privet
     bonsai_index: 2
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Buddhist pine
+    bonsai_index: 3
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Porkbush
+    bonsai_index: 4
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Mock buckhorn
+    bonsai_index: 5
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Chinese pepper
+    bonsai_index: 6
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Maple
+    bonsai_index: 7
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Ginko biloba
+    bonsai_index: 8
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Holm oak
+    bonsai_index: 9
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Malus
+    bonsai_index: 10
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Dawn redwood
+    bonsai_index: 11
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Larix
+    bonsai_index: 12
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Firethorn
+    bonsai_index: 13
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Azalea
+    bonsai_index: 14
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Carmona
+    bonsai_index: 15
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Olive
+    bonsai_index: 16
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Pistachio
+    bonsai_index: 17
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Serissa
+    bonsai_index: 18
+    seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
+    sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
+    bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}
+    overgrown_sprite: {fileID: 21300000, guid: b149fdb7012ec6b4385ff139a4aba4cb, type: 3}
+    bonsai_shop_price: 100
+    money_on_tap: 10
+    decreased_time_on_tap: 2
+    seed_timer: 1
+    sapling_timer: 1
+    overgrown_timer: 1
+    style_timer: 1
+    style_overgrown_timer: 1
+    taps_to_remove_overgrow: 30
+    xp_on_tap: 15
+  - bonsai_name: Jade tree
+    bonsai_index: 19
     seed_sprite: {fileID: 21300000, guid: fc856f7083c53b647b7db3a987a4f8f7, type: 3}
     sapling_sprite: {fileID: 21300000, guid: 0eac6916ca182b84c8b0d9897a655fd9, type: 3}
     bonsai_sprite: {fileID: 21300000, guid: 428989625a0a99c4c978b38d7fb70768, type: 3}

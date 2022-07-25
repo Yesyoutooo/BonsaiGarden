@@ -39,6 +39,8 @@ public class UI_button_handler : MonoBehaviour
     [SerializeField] private GameObject MTX_shop_open_decoration_button;
     [SerializeField] private GameObject MTX_shop_open_booster_button;
 
+    private string latest_shop_opened;
+
 
     [SerializeField] private GameObject disable_free_places_button;
     [SerializeField] private Place_Bonsai place_Bonsai;
@@ -46,6 +48,8 @@ public class UI_button_handler : MonoBehaviour
     [SerializeField] private GameObject pot_shop_grid;
     [SerializeField] private GameObject pot_confirm_button;
     [SerializeField] private GameObject pot_cancel_button;
+
+    [SerializeField] private GameObject level_up_reward_panel;
 
     private void Enable_Menu_Buttons()
     {
@@ -76,12 +80,35 @@ public class UI_button_handler : MonoBehaviour
         Application.Quit();
     }
 
+    public void Open_Shop()
+    {
+        switch (latest_shop_opened)
+        {
+            case "Bonsai":
+                Open_Bonsai_Shop();
+                break;
+            case "Decoration":
+                Open_Decoration_Shop();
+                break;
+            case "Booster":
+                Open_Booster_Shop();
+                break;
+            case "MTX":
+                Open_Bonsai_Shop();
+                break;
+            default:
+                Open_Bonsai_Shop();
+                break;
+        }
+    }
+
     public void Open_Bonsai_Shop()
     {
         bonsai_shop_grid.SetActive(true);
         decoration_shop_grid.SetActive(false);
         booster_shop_grid.SetActive(false);
         MTX_shop_grid.SetActive(false);
+        latest_shop_opened = "Bonsai";
     }
     public void Open_Decoration_Shop()
     {
@@ -89,6 +116,7 @@ public class UI_button_handler : MonoBehaviour
         decoration_shop_grid.SetActive(true);
         booster_shop_grid.SetActive(false);
         MTX_shop_grid.SetActive(false);
+        latest_shop_opened = "Decoration";
     }
     public void Open_Booster_Shop()
     {
@@ -96,6 +124,7 @@ public class UI_button_handler : MonoBehaviour
         decoration_shop_grid.SetActive(false);
         booster_shop_grid.SetActive(true);
         MTX_shop_grid.SetActive(false);
+        latest_shop_opened = "Booster";
     }
     public void Open_MTX_Shop()
     {
@@ -103,6 +132,7 @@ public class UI_button_handler : MonoBehaviour
         decoration_shop_grid.SetActive(false);
         booster_shop_grid.SetActive(false);
         MTX_shop_grid.SetActive(true);
+        latest_shop_opened = "MTX";
     }
 
     public void Close_Shop()
@@ -141,5 +171,15 @@ public class UI_button_handler : MonoBehaviour
     {
         pot_shop_grid.SetActive(false);
         Enable_Menu_Buttons();
+    }
+
+    public void Enable_Level_Up_Reward_Panel()
+    {
+        level_up_reward_panel.SetActive(true);
+    }
+
+    public void Disable_Level_Up_Reward_Panel()
+    {
+        level_up_reward_panel.SetActive(false);
     }
 }
